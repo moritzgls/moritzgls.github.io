@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #8E7AD4;
+    background-color: #1c1c1c;
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -35,14 +35,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #8E7AD4; /* Pastel pink highlight */
+    color: #8E7AD4; /* Updated color */
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #81d4fa; /* Light blue highlight */
+    color: #57F2D6; /* Updated color */
 }
 
 /* Container for all sections to create the framing box */
@@ -51,7 +51,7 @@ nav ul li a:hover {
     margin: 0 auto; /* Center the container */
     padding: 20px;  /* Padding inside the container */
     background-color: #1f1f1f; /* Slightly lighter background for contrast */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 5px; /* Sharper corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
@@ -62,13 +62,13 @@ nav ul li a:hover {
 
 h1 {
     font-size: 36px;
-    color: #8E7AD4; /* Pastel orange */
+    color: #8E7AD4; /* Updated color */
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 24px;
-    color: #57F2D6; /* Integrating your specified color */
+    color: #57F2D6; /* Updated color */
     margin: 10px 0;
 }
 
@@ -79,22 +79,20 @@ p {
 
 /* Profile Picture */
 .profile-pic {
-    width: 160px; /* Larger size */
+    width: 160px; /* Slightly larger size */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px;
     float: right; /* Align to the right */
-    border-radius: 0; /* Remove circular frame */
 }
 
 /* Text Boxes */
 .text-box {
-    background-color: #37465B; /* Dark box color */
+    background-color: #2a2a2a; /* Lighter background to match overall theme */
     border: 2px solid #57F2D6; /* Border color */
-    border-radius: 3px; /* Rounded corners */
+    border-radius: 5px; /* Sharper corners */
     padding: 20px; /* Padding inside the box */
     margin: 20px auto; /* Center the box */
     max-width: 800px; /* Max width for the box */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for emphasis */
 }
 
 /* List Styles */
@@ -109,18 +107,18 @@ ul li {
 }
 
 a {
-    color: #81d4fa; /* Light blue */
+    color: #57F2D6; /* Updated color */
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: #f48fb1; /* Pastel pink */
+    color: #8E7AD4; /* Updated color */
 }
 
 /* Sticky footer */
 footer {
-    background-color: #8E7AD4;
+    background-color: #1c1c1c;
     padding: 20px;
     text-align: center;
     color: #e0e0e0;
