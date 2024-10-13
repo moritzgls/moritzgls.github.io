@@ -79,10 +79,11 @@ p {
 
 /* Profile Picture */
 .profile-pic {
-    width: 140px; /* Larger size */
+    width: 160px; /* Larger size */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px;
     float: right; /* Align to the right */
+    border-radius: 0; /* Remove circular frame */
 }
 
 /* Text Boxes */
@@ -93,6 +94,7 @@ p {
     padding: 20px; /* Padding inside the box */
     margin: 20px auto; /* Center the box */
     max-width: 800px; /* Max width for the box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for emphasis */
 }
 
 /* List Styles */
