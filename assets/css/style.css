@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #1c1c1c;
+    background-color: #8E7AD4;
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -35,7 +35,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #f48fb1; /* Pastel pink highlight */
+    color: #8E7AD4; /* Pastel pink highlight */
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
@@ -62,13 +62,13 @@ nav ul li a:hover {
 
 h1 {
     font-size: 36px;
-    color: #ffcc80; /* Pastel orange */
+    color: #8E7AD4; /* Pastel orange */
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 24px;
-    color: #6B8DF2; /* Integrating your specified color */
+    color: #57F2D6; /* Integrating your specified color */
     margin: 10px 0;
 }
 
@@ -90,7 +90,7 @@ p {
 .text-box {
     background-color: #37465B; /* Dark box color */
     border: 2px solid #57F2D6; /* Border color */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 3px; /* Rounded corners */
     padding: 20px; /* Padding inside the box */
     margin: 20px auto; /* Center the box */
     max-width: 800px; /* Max width for the box */
@@ -120,7 +120,7 @@ a:hover {
 
 /* Sticky footer */
 footer {
-    background-color: #1c1c1c;
+    background-color: #8E7AD4;
     padding: 20px;
     text-align: center;
     color: #e0e0e0;
