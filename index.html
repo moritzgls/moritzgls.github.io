@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website of Moritz Glaser - Researcher and Student">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Moritz Glaser</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -11,23 +11,59 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="papers.html">Papers</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="updates.html">Updates</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#news">News</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="intro">
-        <img src="assets/img/profile.jpg" alt="Profile Picture">
-        <h1>Moritz Glaser</h1>
-        <p>Researcher | Student</p>
+    <section id="about" class="section">
+        <h1>About Me</h1>
+        <img src="assets/img/profile.jpg" alt="Portrait" class="profile-pic">
+
+        <p>Hi, I work on predicting the multi-faceted effect of mutations using Protein Language Models and Graph Neural Nets.
+            I'm interested in general AI research such as reinforcement learning, Language and Graphs models as well as Diffusion and Flow Matching.</p>
+            <p>I conducted clinical lung cancer research during high school (cf. <li><a href="papers.html">publications</a></li>) and I am still working on a project in cooperation with my mentor PD Dr. Matthias Scheffler from the University Hospital of Cologne.</p>
+            <p>Informal and formal education: for coding and ML I am self-taught and greatly benefited from Andrej Karpathy's from zero to hero tutorials:) Currently, I study Medicine at Charité - University Hospital Berlin and Computer Science at Technical University Berlin</p>
+
+    </section>
+
+
+    <section id="skills" class="section">
+        <h1>My Skills</h1>
+        <h2>ML Research and Data Analysis</h2>
+                <p>In my work on predicting mutation effects with Protein-Language Model based deep learning models, I have gained proficiency in PyTorch and in different deep learning building blocks such as Transformer decoders, CNNs and Graph Nets to model protein structure. I learned Data Analysis by my cancer research projects where I used R for survival analysis and plotting, as well as SciPy, Matplotlib, Seaborn, Pandas etc. for statistical analysis and visualisation</p>
+        <h2>Clinical Research</h2>
+                <p>I have gained somewhat expertise on the treatment of cancer patients, targeted therapy in lung cancer as well as tumor genomics through my clinical and preclinical cancer research.</p>
+        <h2>Preclinical Research</h2>
+                <p>During my 2 months internship in the Brägelmann Lab at the Department of Translational Genomics of the University Cologne I established a platform for ROS1 mutation testing where i gained wet lab skills such as qPCR, Gibbson Cloning, Site-directed Mutagenesis, transformation in E. coli, cell culture, virus production, Western Blot and several other assays</p>
+    </section>
+
+
+    <section id="publications" class="section">
+        <h1>Publications</h1>
+        <ul>
+            <li>Publication 1 - <em>Journal/Conference</em></li>
+            <li>Publication 2 - <em>Journal/Conference</em></li>
+            <!-- Add more as needed -->
+        </ul>
+    </section>
+
+    <section id="cv" class="section">
+        <h1>CV</h1>
+        <p><a href="assets/cv/yourcv.pdf" download>Download my CV</a></p>
+    </section>
+
+    <section id="news" class="section">
+        <h1>News</h1>
+        <p>Oct 14, 2024 - I won the "Young Investigator Award" of the DGHO cancer research society. And i presented my research on CTNNB1 mutations in a mini oral.</p>
     </section>
 
     <footer>
-        <p>© 2024 Moritz Glaser</p>
+        <p>© 2024 Moritz Glaser. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
