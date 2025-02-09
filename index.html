@@ -1,106 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moritz Glaser</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moritz Glaser</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    footer {
+      background-color: #2C3E50;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 60px; /* Increased height to accommodate content */
+      z-index: 1000;
+      /* Added these properties for vertical centering */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer p {
+      margin: 0; /* Remove default paragraph margin */
+    }
+
+    /* Update body padding to account for footer height */
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fa;
+      display: flex;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 60px; /* Match footer height */
+    }
+
+    /* News Column */
+    .news-column {
+      width: 20%;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .news-column h2 {
+      font-size: 1.5rem;
+      color: #2C3E50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    .news-item {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .news-date {
+      color: #666;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* Main Container */
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 20px;
+      color: #2C3E50;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .bio h1 {
+      font-size: 3rem;
+      margin: 0 0 15px 0;
+    }
+
+    .bio p {
+      font-size: 1.2rem;
+      color: #000000; /* Changed from #7f8c8d to black */
+      margin: 0;
+    }
+
+
+
+    /* Social Media */
+    .socials {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    .socials a {
+      font-size: 1.8rem;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .socials a:hover {
+      color: #3498db;
+    }
+    .socials hr {
+      width: 200px; /* Made longer */
+      margin-top: 10px;
+      border: 0.5px solid #ccc;
+    }
+
+    /* X (Twitter) Logo */
+    .x-logo {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    /* Navigation */
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2C3E50;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* Sections */
+    .section {
+      margin: 40px 0;
+    }
+    .section h2 {
+      color: #2C3E50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      font-size: 1.8rem;
+    }
+
+    /* Papers */
+    .papers .paper {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .papers .paper img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .papers .paper .details h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #2C3E50;
+    }
+    .papers .paper .details p {
+      margin: 5px 0;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+    .paper-description {
+      margin-top: 10px;
+      color: #555;
+      font-style: italic;
+    }
+    .papers .paper .details a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .papers .paper .details a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .news-column {
+        display: none;
+      }
+      .container {
+        width: 100%;
+      }
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <div class="news-column">
+    <h2>News</h2>
+    <div class="news-item">
+      <span class="news-date">February 5, 2025</span>
+      Posted a new paper on mutation effect prediction
+    </div>
+    <div class="news-item">
+      <span class="news-date">January 15, 2025</span>
+      Won the <b>Young Investigator Award</b> of the DGHO cancer research society
+    </div>
+    <div class="news-item">
+      <span class="news-date">December 10, 2024</span>
+      Participated in the <a href="https://www.m2lschool.org/">Mediterranean Machine Learning Summer school</a> in Milan sponsored by Google Deepmind
+    </div>
+  </div>
+
+  <div class="container">
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#news">News</a></li>
-            </ul>
-        </nav>
+      <div class="header-content">
+        <div class="profile-pic">
+          <img src="profile.jpg" alt="Profile Picture">
+        </div>
+        <div class="bio">
+          <h1>Moritz Glaser</h1>
+          <p>Hi, I'm a <i>student researcher</i> working on biological AI applications like mutation effect prediction.</p>
+            <p>I study computer science at <i>Technical University Berlin</i> and previously studied medicine at <i>Charité - University Hospital Berlin</i>. I'm also a scholar of the <i>German Academic Scholarship Foundation</i>.</p>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://x.com/MoritzGls" class="fab fa-twitter" target="_blank" title="X (Twitter)">
+        <a href="https://www.linkedin.com/in/moritz-glaser-7a6305262/" class="fab fa-linkedin" target="_blank" title="LinkedIn"></a>
+        <a href="https://www.researchgate.net/profile/Moritz-Glaser-3" class="fab fa-researchgate" target="_blank" title="ResearchGate"></a>
+        <a href="https://github.com/moritzgls" class="fab fa-github" target="_blank" title="GitHub"></a>
+        <a href="mailto:moritz.glaser@posteo.de" class="fas fa-envelope" title="Email"></a>
+      </div>
+      <hr>
     </header>
 
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+    </nav>
 
-<section id="social" class="section">
-    <h2>Connect with Me</h2>
-    <div class="social-icons">
-        <!-- GitHub Link -->
-        <a href="https://github.com/moritzgls" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        
-        <a href="mailto:beispiel.beispiel@posteo.de">
-            <i class="fas fa-envelope"></i>
-        </a>
-        
-        <!-- Other Social Media -->
-        <a href="https://x.com/MoritzGls" target="_blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.researchgate.net/profile/Moritz-Glaser-3" target="_blank">
-            <i class="fab fa-researchgate"></i>
-        </a>
-        <a href="https://scholar.google.de/citations?user=aop9ct8AAAAJ&hl=en" target="_blank">
-            <i class="fas fa-graduation-cap"></i> <!-- Scholar icon -->
-        </a>
-        <p>I'm always interested in collaborations, interesting ideas and research internships, so feel free to contact me!</p>
-    </div>
-</section>
-
-
-
-    <section id="about" class="section">
-        <h1>About Me</h1>
-        <img src="assets/img/profile.jpg" alt="Portrait" class="profile-pic">
-
-        <div class="text-box">
-            <p>Hi, I work on <strong>predicting the multi-faceted effect of mutations using Protein Language Models and Graph Neural Nets</strong>.<br>
-                I'm interested in general AI research such as Language and Graph models, reinforcement learning as well as Diffusion and Flow Matching.</p><br><br>
-            <p>I conducted clinical lung cancer research during high school (cf. <a href="#publications" target="_blank">publications</a>) and I am still working on a project in cooperation with my mentor PD Dr. Matthias Scheffler from the University Hospital of Cologne.</p><br><br>
-            <p><strong>Informal and formal education:</strong> for coding and ML I am self-taught and greatly benefited from Andrej Karpathy's from <a href="https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ" target="_blank">from zero to hero</a> tutorials:) <br> Currently, I study <em>Medicine</em> at <em>Charité - University Hospital Berlin</em> and <em>Computer Science</em> at <em>Technical University Berlin</em>.</p>
-        </div>
+    <section id="research" class="section">
+      <h2>Research</h2>
+      <p>My research focuses on mutation effect prediction and improving generalization of ESM-Effect. I also explore RL and interpretability research, comparing AlphaFold2 and ESM-2.</p>
     </section>
 
-    <section id="skills" class="section">
-        <h1>My Skills</h1>
-        <h2>ML Research and Data Analysis</h2>
-        <div class="text-box">
-            <p>In my work on <strong>predicting mutation effects with Protein-Language Model</strong> based deep learning models, I have gained proficiency in <strong>PyTorch</strong> and in different <strong>deep learning building blocks</strong> such as Transformer decoders, CNNs and Graph Nets to model protein structure. I learned Data Analysis by my cancer research projects where I used R for survival analysis and plotting, as well as <strong>SciPy, Matplotlib, Seaborn, Pandas</strong> etc. for statistical analysis and visualisation.</p>
+    <section id="publications" class="section papers">
+      <h2>Publications</h2>
+      <div class="paper">
+        <img src="esme.jpg" alt="Paper Figure">
+        <div class="details">
+          <h3>ESM-Effect: An Effective Fine-Tuning Framework for Mutation Effect Prediction</h3>
+          <p><b>Moritz Glaser</b>, Johannes Brägelmann</p>
+          <p class="paper-description">Tackling functional effect prediction by fine-tuning PLMs on DMS data achieving SOTA performance and x4.7 faster training compared to multi-modal SOTA models. Also introducing a Benchmarking Framework testing on distinct sequence intervals to probe generalization and using the Bin-Mean-Error metric emphasizing prediction performance on rare Gain-of-Function mutations relevant to targeted cancer therapy.</p>
+          <p><a href="https://www.biorxiv.org/content/10.1101/2025.02.03.635741v1">Preprint on BioRxiv (2025)</a></p>
         </div>
-        <h2>Clinical Research</h2>
-        <div class="text-box">
-            <p>I have gained somewhat expertise on the <strong>treatment of cancer patients, targeted therapy</strong> in lung cancer as well as <strong>tumor genomics</strong> through my clinical and preclinical cancer research.</p>
+      </div>
+      <div class="paper">
+        <img src="ros1.jpg" alt="Paper Figure">
+        <div class="details">
+          <h3>Clinicopathologic and molecular characteristics of small-scale ROS1-mutant non-small cell lung cancer (NSCLC) patients</h3>
+          <p><b>Moritz Glaser</b>, Anna Rasokat, Darinka Prang, Lucia Nogova, Claudia Wömpner, Jaqueline Schmitz, Elisabeth Bitter, Inken Terjung, Anna Eisert, Rieke Fischer, Felix John, Cornelia von Levetzow, Sebastian Michels, Richard Riedel, Lea Ruge, Heather Scharpenseel, Udo Siebolts, Sabine Merkelbach-Bruse, Reinhard Buettner, Jürgen Wolf and Matthias Scheffler</p>
+          <p class="paper-description">Comprehensive analysis of <i>ROS1</i> mutations in NSCLC, providing insights into patient characteristics and treatment outcomes.</p>
+          <p><a href="https://www.lungcancerjournal.info/article/S0169-5002(23)00882-6/fulltext">Published in <i>Lung Cancer Journal</i> (2023)</a></p>
         </div>
-        <h2>Preclinical Research</h2>
-        <div class="text-box">
-            <p>During my 2 months research internship in the <a href="https://www.braegelmannlab.com/" target="_blank"><em>Brägelmann Lab</em></a> at the <em>Department of Translational Genomics</em> of the <em>University of Cologne</em> I <strong>established a platform for ROS1 mutation testing</strong> where I gained wet lab skills such as qPCR, Gibbson Cloning, Site-directed Mutagenesis, transformation in E. coli, cell culture, virus production, Western Blot and several other assays.</p>
-        </div>
+      </div>
     </section>
 
-    <section id="publications" class="section">
-        <h1>Publications</h1>
-        <div class="text-box">
-            <ul>
-                <li>Clinicopathologic and molecular characteristics of small-scale ROS1-mutant non-small cell lung cancer (NSCLC) patients - <em>M Glaser et al. LungCancer 2023</em></li>
-                <!-- Add more as needed -->
-            </ul>
-        </div>
+    <section id="cv" class="section">
+      <h2>Curriculum Vitae</h2>
+      <p>Download my CV: <a href="CV_Moritz_Glaser.pdf" target="_blank">PDF</a></p>
     </section>
+  </div>
 
+  <footer>
+    <p>&copy; 2025 Moritz Glaser. All rights reserved.</p>
+  </footer>
 
-    <section id="news" class="section">
-        <h1>News</h1>
-        <div class="text-box">
-            <ul>
-                <li>Oct 14, 2024 - I won the <strong>Young Investigator Award</strong> of the <em>DGHO cancer research society</em> and presented my research on CTNNB1 mutations in a mini oral.</li>
-                <li>Sept, 2024 - I participated in the <a href="https://www.m2lschool.org/" target="_blank">Mediterranean Machine Learning Summer School</a> organised by the AI Education foundation and sponsored by Google DeepMind. In the Poster session I presented my current <a href="https://www.m2lschool.org/posters#h.vzcon1m0cqk2" target="_blank"> state of progress</a> for functional mutation prediction.</li>
-                <li>Aug, 2023 - Our <a href="https://www.lungcancerjournal.info/article/S0169-5002(23)00882-6/fulltext" target="_blank">paper</a> on ROS1 Mutations in NSCLC is out in Lung Cancer</li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 Moritz Glaser. All Rights Reserved.</p>
-    </footer>
 </body>
 </html>
