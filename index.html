@@ -11,22 +11,21 @@
     footer {
       background-color: #2C3E50;
       color: white;
-      position: fixed;
-      bottom: 0;
       width: 100%;
-      height: 60px; /* Increased height to accommodate content */
-      z-index: 1000;
+      height: 60px;
+      /* Removed position: fixed to make it stay at the bottom of content */
       /* Added these properties for vertical centering */
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 40px; /* Add some space above the footer */
     }
 
     footer p {
       margin: 0; /* Remove default paragraph margin */
     }
 
-    /* Update body padding to account for footer height */
+    /* Update body padding to remove the footer spacing */
     body {
       font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
@@ -35,10 +34,10 @@
       display: flex;
       min-height: 100vh;
       position: relative;
-      padding-bottom: 60px; /* Match footer height */
+      /* Removed padding-bottom */
     }
 
-    /* News Column */
+    /* News Timeline Column */
     .news-column {
       width: 20%;
       background-color: #ffffff;
@@ -52,18 +51,54 @@
       padding-bottom: 5px;
       margin-bottom: 15px;
     }
-    .news-item {
-      font-size: 0.9rem;
-      color: #333;
-      margin-bottom: 25px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
+    
+    /* Timeline styling */
+    .timeline {
+      position: relative;
+      margin-left: 20px;
     }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #3498db;
+    }
+    
+    .news-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 25px;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: -6px;
+      top: 5px;
+      border-radius: 50%;
+      background-color: #3498db;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #3498db;
+    }
+    
     .news-date {
-      color: #666;
-      font-size: 0.8rem;
+      color: #3498db;
+      font-weight: bold;
+      font-size: 0.9rem;
       margin-bottom: 5px;
       display: block;
+    }
+    
+    .news-content {
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.4;
     }
 
     /* Main Container */
@@ -95,7 +130,7 @@
     }
 
     .bio h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       margin: 0 0 15px 0;
     }
 
@@ -104,8 +139,6 @@
       color: #000000; /* Changed from #7f8c8d to black */
       margin: 0;
     }
-
-
 
     /* Social Media */
     .socials {
@@ -203,7 +236,6 @@
       text-decoration: underline;
     }
 
-
     /* Responsive */
     @media screen and (max-width: 768px) {
       .news-column {
@@ -223,17 +255,33 @@
 
   <div class="news-column">
     <h2>News</h2>
-    <div class="news-item">
-      <span class="news-date">February 7, 2025</span>
-      Posted ESM-Effect - an ESM-2 Fine-Tuning approach to functional effect prediction and robust Benchmarks
-    </div>
-    <div class="news-item">
-      <span class="news-date">October, 2025</span>
-      Won the <b>Young Investigator Award</b> of the DGHO cancer research society
-    </div>
-    <div class="news-item">
-      <span class="news-date">September, 2024</span>
-      Participated in the <a href="https://www.m2lschool.org/">Mediterranean Machine Learning Summer school</a> in Milan sponsored by Google Deepmind
+    <div class="timeline">
+      <div class="news-item">
+        <span class="news-date">March 5, 2025</span>
+        <div class="news-content">
+          ESM-Effect accepted as <b>Spotlight</b> at <b>MLGenX Workshop @ ICLR 2025</b>.
+        </div>
+      </div>
+      <div class="news-item">
+        <span class="news-date">February 7, 2025</span>
+        <div class="news-content">
+          Posted ESM-Effect - an ESM-2 Fine-Tuning approach to functional effect prediction and robust Benchmarks
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-date">October, 2024</span>
+        <div class="news-content">
+          Won the <b>Young Investigator Award</b> of the DGHO cancer research society
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-date">September, 2024</span>
+        <div class="news-content">
+          Participated in the <a href="https://www.m2lschool.org/">Mediterranean Machine Learning Summer school</a> in Milan sponsored by Google Deepmind
+        </div>
+      </div>
     </div>
   </div>
 
@@ -250,7 +298,7 @@
         </div>
       </div>
       <div class="socials">
-        <a href="https://x.com/MoritzGls" class="fab fa-twitter" target="_blank" title="X (Twitter)">
+        <a href="https://x.com/MoritzGls" class="fab fa-twitter" target="_blank" title="X (Twitter)"></a>
         <a href="https://www.linkedin.com/in/moritz-glaser-7a6305262/" class="fab fa-linkedin" target="_blank" title="LinkedIn"></a>
         <a href="https://www.researchgate.net/profile/Moritz-Glaser-3" class="fab fa-researchgate" target="_blank" title="ResearchGate"></a>
         <a href="https://github.com/moritzgls" class="fab fa-github" target="_blank" title="GitHub"></a>
@@ -278,6 +326,7 @@
           <h3>ESM-Effect: An Effective Fine-Tuning Framework for Mutation Effect Prediction</h3>
           <p><b>Moritz Glaser</b>, Johannes Brägelmann</p>
           <p class="paper-description">Tackling functional effect prediction by fine-tuning PLMs on DMS data achieving SOTA performance and x4.7 faster training compared to multi-modal SOTA models. Also introducing a Benchmarking Framework testing on distinct sequence intervals to probe generalization and using the Bin-Mean-Error metric emphasizing prediction performance on rare Gain-of-Function mutations relevant to targeted cancer therapy.</p>
+          <p><a href="https://openreview.net/forum?id=kY3zOTMtjU">Paper at MLGenX Workshop @ ICLR 2025</a></p>
           <p><a href="https://www.biorxiv.org/content/10.1101/2025.02.03.635741v1">Preprint on BioRxiv (2025)</a></p>
         </div>
       </div>
@@ -296,11 +345,11 @@
       <h2>Curriculum Vitae</h2>
       <p>Download my CV: <a href="CV_Moritz_Glaser.pdf" target="_blank">PDF</a></p>
     </section>
+    
+    <footer>
+      <p>&copy; 2025 Moritz Glaser. All rights reserved.</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>&copy; 2025 Moritz Glaser. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
