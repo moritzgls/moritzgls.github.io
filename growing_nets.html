@@ -63,6 +63,16 @@ body.showEditorSelection .code-line:hover:before {
     max-width: clamp(600px, 70vw, 900px);
     margin: 0 auto;   /* Centers the container horizontally */
     padding: 20px;    /* Adds breathing room on smaller screens */
+	box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .post-container {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        padding: 12px; /* Matches your mobile body padding */
+    }
 }
 
 body.showEditorSelection li.code-active-line:before,
