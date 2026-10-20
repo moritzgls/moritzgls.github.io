@@ -3,7 +3,7 @@
 <head>
 <title>Growing Nets: Can a Neural Net's training determine how much capacity is needed for optimal performance?</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
 /*---------------------------------------------------------------------------------------------
@@ -58,20 +58,17 @@ body.showEditorSelection .code-line:hover:before {
 	height: 100%;
 }
 .post-container {
-    width: 50%;
-    /* Scales between 600px (on small screens), 70vw (fluidly on mid screens), and stops at 900px (on large monitors) */
-    max-width: clamp(600px, 70vw, 900px);
-    margin: 0 auto;   /* Centers the container horizontally */
-    padding: 20px;    /* Adds breathing room on smaller screens */
-	box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 900px) {
     .post-container {
-        width: 100vw;
-        max-width: none;
-        margin: 0;
-        padding: 12px; /* Matches your mobile body padding */
+        width: clamp(600px, 50vw, 900px);
+        margin: 0 auto;
+        padding: 20px;
     }
 }
 
